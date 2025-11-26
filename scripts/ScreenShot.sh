@@ -112,7 +112,7 @@ shotarea() {
 
   # Copy with saving
 	if [[ -s "$tmpfile" ]]; then
-		wl-copy <"$tmpfile"
+		wl-copy -t image/png < "$tmpfile"
 		mv "$tmpfile" "$dir/$file"
 	fi
 	notify_view
@@ -134,7 +134,7 @@ shotswappy() {
 
   # Copy without saving
   if [[ -s "$tmpfile" ]]; then
-		wl-copy <"$tmpfile"
+		wl-copy -t image/png < "$tmpfile"
     notify_view "swappy"
   fi
 }
