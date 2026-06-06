@@ -43,10 +43,10 @@ elif [ -n "$HDMI_MONITOR" ]; then
     EXTERNAL_MONITOR="HDMI-A-2"
 
     # Set up HDMI monitor on the left
-    hyprctl keyword monitor "HDMI-A-2,1920x1080@60,0x0,1"
+    hyprctl keyword monitor "HDMI-A-2,2048x1280@120,0x0,1"
 
     # Set up laptop monitor on the right
-    hyprctl keyword monitor "$LAPTOP_MONITOR,2048x1280@120,1920x0,1"
+    hyprctl keyword monitor "$LAPTOP_MONITOR,2048x1280@120,2048x0,1"
 
     # Assign workspaces
     hyprctl keyword workspace "1,monitor:$LAPTOP_MONITOR"
