@@ -52,4 +52,7 @@ if file_exists "${UserScripts}/RainbowBorders.sh"; then
     ${UserScripts}/RainbowBorders.sh &
 fi
 
+# Keep UI on Tokyo Night even after wallust/wallpaper
+${SCRIPTSDIR}/apply-tokyonight.sh >/dev/null 2>&1 || true
+
 exit 0

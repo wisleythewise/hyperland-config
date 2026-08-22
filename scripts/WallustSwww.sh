@@ -57,3 +57,6 @@ cp -f "$wallpaper_path" "$wallpaper_current" || true
 # Run wallust (silent) to regenerate templates defined in ~/.config/wallust/wallust.toml
 # -s is used in this repo to keep things quiet and avoid extra prompts
 wallust run -s "$wallpaper_path" || true
+
+# Override wallust with pinned Tokyo Night
+$HOME/.config/hypr/scripts/apply-tokyonight.sh >/dev/null 2>&1 || true

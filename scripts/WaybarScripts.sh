@@ -29,16 +29,23 @@ if [[ "$1" == "--btop" ]]; then
 elif [[ "$1" == "--nvtop" ]]; then
     $term --title nvtop sh -c 'nvtop'
 elif [[ "$1" == "--nmtui" ]]; then
+    # Full NetworkManager TUI (VPNs, ethernet, etc.) — right-click fallback
     $term nmtui
+elif [[ "$1" == "--wifi" ]]; then
+    "$HOME/.config/hypr/scripts/WifiPanel.sh"
+elif [[ "$1" == "--bluetooth" ]] || [[ "$1" == "--bt" ]]; then
+    "$HOME/.config/hypr/scripts/BluetoothPanel.sh"
 elif [[ "$1" == "--term" ]]; then
     $term &
 elif [[ "$1" == "--files" ]]; then
     $files &
 else
-    echo "Usage: $0 [--btop | --nvtop | --nmtui | --term]"
+    echo "Usage: $0 [--btop | --nvtop | --nmtui | --wifi | --bt | --term]"
     echo "--btop       : Open btop in a new term"
     echo "--nvtop      : Open nvtop in a new term"
     echo "--nmtui      : Open nmtui in a new term"
+    echo "--wifi       : Open floating wifitui panel"
+    echo "--bt         : Open floating bluetui panel"
     echo "--term   : Launch a term window"
     echo "--files  : Launch a file manager"
 fi
